@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root alignment="CENTER_LEFT" prefHeight="40.0" style="-fx-border-width: 1; -fx-border-color: #f9fbff; -fx-background-color: rgba(230, 230, 230, 1); -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.25), 4, 0.0, 0, 1); -fx-background-radius: 2;" type="HBox" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="field" editable="false" prefHeight="40.0" prefWidth="200.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></TextField>
+      <Button fx:id="close" defaultButton="true" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="X" />
+   </children>
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
+</fx:root>

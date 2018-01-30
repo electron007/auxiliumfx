@@ -36,8 +36,6 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<jacoco.version>0.6.4.201312101107</jacoco.version>
-		<arguments>-e</arguments>
 	</properties>
 
 	<distributionManagement>
@@ -62,28 +60,6 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-
-			<!-- Generates test coverage report into "target/site/jacoco" directory -->
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 
 		<pluginManagement>

@@ -5,5 +5,6 @@
 /.settings/
 /.checkstyle
 /.pmd
+/bin/
 /maven-central-deploy.log
 /maven-central-deploy.sh~

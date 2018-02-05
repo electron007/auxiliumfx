@@ -8,7 +8,7 @@ Uses Java 8.
 ## Maven dependency
 ```xml
 <dependency>
-	<groupId>org.funke</groupId>
+	<groupId>com.github.electron007</groupId>
 	<artifactId>auxiliumfx</artifactId>
 	<version>${version}</version>
 	<scope>compile</scope>
@@ -20,7 +20,7 @@ Find version in [GitHub releases tab](https://github.com/electron007/auxiliumfx/
 [JavaDoc of current development branch](...)
 
 ## Examples 
-API is <code>org.funke.auxiliumfx</code>,
+API is <code>com.github.electron007.auxiliumfx</code>,
 AuxiliumFX builds following :
 ```java
 //testResourcesPath == "test/net/lkrnac/someapp/AppTest/"

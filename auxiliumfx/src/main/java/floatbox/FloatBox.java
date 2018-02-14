@@ -1,28 +1,19 @@
-// *H=========================================================================
-// *M MERCEDES BENZ RESEARCH AND DEVELOPMENT INDIA (MBRDI) RESTRICTED
-// *H=========================================================================
-// *H
-// *C COPYRIGHT
-// *C
-// *C Licensed to the Apache Software Foundation (ASF) under one
-// *C or more contributor license agreements.  See the NOTICE file
-// *C distributed with this work for additional information
-// *C regarding copyright ownership.  The ASF licenses this file
-// *C to you under the Apache License, Version 2.0 (the
-// *C "License"); you may not use this file except in compliance
-// *C with the License.  You may obtain a copy of the License at
-// *C
-// *C  http://www.apache.org/licenses/LICENSE-2.0
-// *C
-// *C Unless required by applicable law or agreed to in writing,
-// *C software distributed under the License is distributed on an
-// *C "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-// *C KIND, either express or implied.  See the License for the
-// *C specific language governing permissions and limitations
-// *C under the License.
-// *C
-// *H===========================================================================
-
+/*
+ * Copyright [2018] [Sparky]
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
 package floatbox;
 
 import java.io.IOException;
@@ -36,148 +27,155 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 
 /**
- * Defines the class CusHBox.
+ * Defines the class FloatBox.
+ * 
  * @author kariyas
  * @version 0.7.0
  * @since May 3, 2017
  */
 public class FloatBox extends HBox {
 
-  /**
-   * TextField-Field title
-   */
-  @FXML
-  TextField field;
+	private static final String URI_PATH = "FloatBox.fxml";
 
-  /**
-   * Button-Field close
-   */
-  @FXML
-  Button close;
+	/**
+	 * TextField-Field title
+	 */
+	@FXML
+	TextField field;
 
-  /**
-   * boolean-Field isSel
-   */
-  boolean isSel;
+	/**
+	 * Button-Field close
+	 */
+	@FXML
+	Button close;
 
-  /**
-   * String-Field currText
-   */
-  String currText;
+	/**
+	 * boolean-Field isSel
+	 */
+	boolean isSel;
 
-  /**
-   * String-Field filePath
-   */
-  String filePath;
+	/**
+	 * String-Field currText
+	 */
+	String currText;
 
-  /**
-   * Constructor for FloatBox.
-   */
-  public FloatBox() {
-    FXMLLoader fxmlLoader = new FXMLLoader( getClass().getResource( "FloatBox.fxml" ) );
-    fxmlLoader.setRoot( this );
-    fxmlLoader.setController( this );
-    try {
-      fxmlLoader.load();
-    } catch( IOException exception ) {
-      throw new RuntimeException( exception );
-    }
-  }
+	/**
+	 * String-Field filePath
+	 */
+	String filePath;
 
-  /**
-   * This addCustomNode method defines .
-   * @param node
-   */
-  public void addCustomNode( final Node node ) {
-    getChildren().add( node );
-  }
+	/**
+	 * Constructor for FloatBox.
+	 */
+	public FloatBox() {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(URI_PATH));
+		fxmlLoader.setRoot(this);
+		fxmlLoader.setController(this);
+		try {
+			fxmlLoader.load();
+		} catch (IOException exception) {
+			throw new RuntimeException(exception);
+		}
+	}
 
-  /**
-   * This setField method defines .
-   * @param title
-   */
-  public void setField( final String title ) {
-    this.field.setText( title );
-    select( true );
-    setCurrText( title );
-  }
+	/**
+	 * This addCustomNode method defines .
+	 * 
+	 * @param node
+	 */
+	public void addCustomNode(final Node node) {
+		getChildren().add(node);
+	}
 
-  /**
-   * This setFilePath method defines .
-   * @param path
-   */
-  public void setFilePath( final String path ) {
-    this.filePath = path;
-    final Tooltip tooltip = new Tooltip( filePath );
-    this.field.setTooltip( tooltip );
-    this.close.setTooltip( tooltip );
-  }
+	/**
+	 * This setField method defines .
+	 * 
+	 * @param title
+	 */
+	public void setField(final String title) {
+		this.field.setText(title);
+		select(true);
+		setCurrText(title);
+	}
 
-  /**
-   * Getter:
-   * Returns the title of this TextField.
-   * @return the title of this TextField.
-   */
-  public TextField getField() {
-    return field;
-  }
+	/**
+	 * This setFilePath method defines .
+	 * 
+	 * @param path
+	 */
+	public void setFilePath(final String path) {
+		this.filePath = path;
+		final Tooltip tooltip = new Tooltip(filePath);
+		this.field.setTooltip(tooltip);
+		this.close.setTooltip(tooltip);
+	}
 
-  /**
-   * Getter:
-   * Returns the currText of this FloatBox.
-   * @return the currText of this FloatBox.
-   */
-  public String getCurrText() {
-    return currText;
-  }
+	/**
+	 * Getter: Returns the title of this TextField.
+	 * 
+	 * @return the title of this TextField.
+	 */
+	public TextField getField() {
+		return field;
+	}
 
-  /**
-   * Setter:
-   * Sets the currText of this FloatBox.
-   * @param currText
-   *          the currText to set.
-   */
-  public void setCurrText( String currText ) {
-    this.currText = currText;
-  }
+	/**
+	 * Getter: Returns the currText of this FloatBox.
+	 * 
+	 * @return the currText of this FloatBox.
+	 */
+	public String getCurrText() {
+		return currText;
+	}
 
-  /**
-   * Getter:
-   * Returns the close of this FloatBox.
-   * @return the close of this FloatBox.
-   */
-  public Button getClose() {
-    return close;
-  }
+	/**
+	 * Setter: Sets the currText of this FloatBox.
+	 * 
+	 * @param currText
+	 *            the currText to set.
+	 */
+	public void setCurrText(String currText) {
+		this.currText = currText;
+	}
 
-  /**
-   * Getter:
-   * Returns the isSel of this FloatBox.
-   * @return the isSel of this FloatBox.
-   */
-  public boolean isSel() {
-    return isSel;
-  }
+	/**
+	 * Getter: Returns the close of this FloatBox.
+	 * 
+	 * @return the close of this FloatBox.
+	 */
+	public Button getClose() {
+		return close;
+	}
 
-  /**
-   * This select method defines .
-   * @param bool
-   */
-  public void select( final boolean bool ) {
-    this.isSel = bool;
-    if( !bool )
-      field.setStyle( "-fx-background-color: white;" );
-    else
-      field.setStyle( "-fx-background-color: transparent;" );
-  }
+	/**
+	 * Getter: Returns the isSel of this FloatBox.
+	 * 
+	 * @return the isSel of this FloatBox.
+	 */
+	public boolean isSel() {
+		return isSel;
+	}
 
-  /**
-   * This updateView method defines .
-   */
-  public void updateView( final boolean bool ) {
-    field.setEditable( !bool );
-    select( bool );
-    close.setDisable( !bool );
-  }
+	/**
+	 * This select method defines .
+	 * 
+	 * @param bool
+	 */
+	public void select(final boolean bool) {
+		this.isSel = bool;
+		if (!bool)
+			field.setStyle("-fx-background-color: white;");
+		else
+			field.setStyle("-fx-background-color: transparent;");
+	}
+
+	/**
+	 * This updateView method defines .
+	 */
+	public void updateView(final boolean bool) {
+		field.setEditable(!bool);
+		select(bool);
+		close.setDisable(!bool);
+	}
 
 }

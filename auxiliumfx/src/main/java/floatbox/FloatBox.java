@@ -25,6 +25,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
+import utils.ConstanceUtils;
 
 /**
  * Defines the class FloatBox.
@@ -34,8 +35,6 @@ import javafx.scene.layout.HBox;
  * @since May 3, 2017
  */
 public class FloatBox extends HBox {
-
-	private static final String URI_PATH = "FloatBox.fxml";
 
 	/**
 	 * TextField-Field title
@@ -68,7 +67,7 @@ public class FloatBox extends HBox {
 	 * Constructor for FloatBox.
 	 */
 	public FloatBox() {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(URI_PATH));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(ConstanceUtils.UI_PATH_FLOATBOX));
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
 		try {
